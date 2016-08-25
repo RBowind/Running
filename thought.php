@@ -52,7 +52,7 @@
         }
     }
 
-    $act = $_GET['postThought'];
+    $act = $_GET['act'];
 
     if ($act === 'postThought'){
         try
