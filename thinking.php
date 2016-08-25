@@ -9,7 +9,7 @@
     require_once 'header.php';
     if(!isset($_SESSION['account']))
     {
-    	exit("echo '请注册或登录';");
+    	exit("请注册或登录");
     }
 
 
