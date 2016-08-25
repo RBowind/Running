@@ -36,18 +36,20 @@
 
         public function postThought()
         {
+            $account = $_SESSION['account'];
             $pdo = new PdoMySQL();
             $data = array(
                 't_id' => self::setTId($this->t_id),
                 '@account' => $_POST['@account'],
                 'postTime'=> $_POST['postTime'],
-                'account' =>$_SESSION['account'],
+                'account' =>$account,
                 'content' =>$_POST['content'],
-                'routesMaps' =>$_POST['routesMaps']
+                'routesMap' =>$_POST['routesMap']
             );
 
             $pdo -> add($data,'thought');
             var_dump($data);
+
 
         }
     }
