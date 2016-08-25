@@ -25,13 +25,7 @@ if(!isset($_SESSION['account'])){
 
 class activity
 {
-  /*  public $postTime;
-    public $address;
-    public $p_number;
-    public $distance;
-    public $runtime;
-    public $description;
-    public $route; */
+
     public  $a_id ;
 
     public function setAId($a_id)
