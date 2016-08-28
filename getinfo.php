@@ -6,38 +6,46 @@
  * Time: 11:29
  */
 require_once 'header.php';
-$act = $_GET['act'];
 
+if(!isset($_SESSION['account']))
+{
+    exit("请注册或登录");
+}
 $GLOBALS['pdo'] = new PdoMySQL();
 
 
     class getActivity     //根据 活动ID 得到活动详情
     {
-        public $a_id;
-
-        /**
-         * @param mixed $a_id
-         */
-        public function setAId($a_id)
-        {
-            $a_id = $_GET['a_id'];
-            return $this->a_id = $a_id;
-        }
 
         public function getActivity()
         {
             try{
-                $array = $GLOBALS['pdo'] ->find('activity',"a_id = '.$this->a_id.'") ;
+                $array = $GLOBALS['pdo'] ->find('activity',"a_id = '".$_GET['a_id']."'") ;
+                foreach ($array as $key=>$value){
+                    echo $key.' : '.$value."<br/>";
+                }
             }catch (PDOException $e){
                 echo '查询失败，请稍后重试。';
             }
         }
 
+
+
+    }
+    class getUserActivity
+    {
         public function getUserActivities()
         {
-
+            try{
+                if($a_ids = $GLOBALS['pdo'] ->find('user_activity',"account = '".$_SESSION['account']."'"))
+                {
+                    $user_Activities = $GLOBALS['pdo'] ->find('activity',"a_id = '".$a_ids['a_id']."'") ;
+                    var_dump($user_Activities) ;
+                }
+            }catch (PDOException $e){
+                echo '查询失败，请稍后重试。';
+            }
         }
-
     }
 
     class getThought        //根据感想ID得到感想详情
@@ -106,12 +114,21 @@ $GLOBALS['pdo'] = new PdoMySQL();
         public function getUserInfo()
         {
             try{
-                $array = $GLOBALS['pdo'] ->find('userinfo',"account = '.$this->account.'") ;
+                $array = $GLOBALS['pdo'] ->find('userinfo','a_id',"account = '.$this->account.'") ;
             }catch (PDOException $e){
                 echo '查询失败，请稍后重试。';
             }
         }
     }
 
-
+    $act = $_GET['act'];
+    switch ($act)
+    {
+        case "getActivity":
+            $getActivity = new getActivity();
+            break;
+        case "getThought":
+            $getThought = new getThought();
+            break;
+    }
 
