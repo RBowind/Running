@@ -53,7 +53,7 @@ $password = md5($_POST['password']);
                         $result = true;
                         echo $result;
                         $_SESSION['account'] = $account;
-                        echo $_SESSION['account'];
+
                     }else{
                         echo '密码错误！';
                     }
