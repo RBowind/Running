@@ -422,7 +422,7 @@ class PdoMySQL{
 // $fields='*';
 // print_r($PdoMySQL->findById($tabName,$priId,$fields));
 //print_r($PdoMySQL->findById($tabName, $priId));
-$tables='user';
+
 
 //print_r($PdoMySQL->find($tables));
 //print_r($PdoMySQL->find($tables,'id>=30'));

@@ -32,12 +32,12 @@ $password = md5($_POST['password']);
 
                 $result = true;
 
-                echo $result;
 
-                echo  $_SESSION['account'] = $account;
+                $_SESSION['account'] = $account;
+
+                return $result;
+
             }
-
-
 
             } catch (PDOException $e) {
             echo $sql . "<br>" . $e->getMessage();
@@ -50,17 +50,25 @@ $password = md5($_POST['password']);
 
             if( $passwd = $pdo->find('user',' account =  "'.$account.'" ','password')){
                     if($password == $passwd['password'] ){
-                        $result = true;
-                        echo $result;
+
                         $_SESSION['account'] = $account;
 
+                        echo true;
+
+                        return true;
+
                     }else{
-                        echo '密码错误！';
+
+                        echo '密码错误';
                     }
             }else{
+
                     echo false;
-                    echo '用户名不存在！';
-                    echo $account.$password;
+
+                    echo "用户名不存在";
+
+                    return false;
+
                 }
         }catch (PDOException $e){
 

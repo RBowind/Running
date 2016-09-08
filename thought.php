@@ -4,7 +4,7 @@
  * User: 赵天歌
  * Date: 2016/8/19
  * Time: 0:33
- *功能：实现发布感想的功能。此功能也必须先登录来保持session。
+ * 功能：实现发布感想的功能。此功能也必须先登录来保持session。
  * 通过get方法传递 act的值postActivity，内容用JSON格式，传递的活动信息用post方法：
  * 't_id' => self::setTId($this->t_id),
     '@account' => $_POST['@account'],

@@ -19,7 +19,9 @@
  * Time: 17:03
  */
 require_once 'header.php';
-if(!isset($_SESSION['account'])){
+
+if(!isset($_SESSION['account']))
+{
     exit("请注册或登录！");
 }
 
@@ -55,8 +57,10 @@ class activity
         var_dump($data);
     }
 }
-class adduseractivity extends activity{
-        public function addactivity(){
+class adduseractivity extends activity
+{
+        public function addactivity()
+        {
             $pdo1 = new PdoMySQL();
             $userActivity = array(
                 'account'=>$_SESSION['account'],
@@ -69,13 +73,15 @@ class adduseractivity extends activity{
 
     $act = $_GET['act'];
 
-    if ($act ==='postActivity'){
-        try {
+    if ($act ==='postActivity')
+    {
+        try
+        {
             $user_activity = new adduseractivity();
             $user_activity->addactivity();
             $postActivity = new activity();
             $postActivity->postActivity();
-        }catch (PDOException $e){
+        }catch (PDOException $e) {
             echo $sql . "<br>" . $e->getMessage();
         }
     }

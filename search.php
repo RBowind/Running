@@ -15,7 +15,7 @@ require_once 'header.php';
 
     $account = $_GET['account'];
     $pdo = new PdoMySQL();
-
+    $tables = 'user';
 
     try {
         $pdo -> find($tables,"account = '.$account.'");
