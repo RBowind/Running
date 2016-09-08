@@ -52,7 +52,7 @@ $GLOBALS['pdo'] = new PdoMySQL();
 
                     for ($i =0;$i<count($a_ids);$i++){
                         $user_Activities = $GLOBALS['pdo'] ->find('activity',"a_id = '".$a_ids["$i"]['a_id']."'") ;
-                        print_r($user_Activities);
+                         echo json_encode($user_Activities) ;
                         echo "<br>";
 
                     }
@@ -88,7 +88,7 @@ $GLOBALS['pdo'] = new PdoMySQL();
             try{
                 $array = $GLOBALS['pdo'] ->find('thought',"account = '".$_SESSION['account']."'") ;
                 for($i=0;$i<count($array);$i++){
-                    print_r($array[$i]);
+                    echo json_encode($array[$i]);
                     echo "<br>";
                 }
 
