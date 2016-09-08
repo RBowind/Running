@@ -20,7 +20,7 @@ require_once 'header.php';
     try {
         $pdo -> find($tables,"account = '.$account.'");
         $result = true ;
-        return $result;
+        echo $result;
     }catch (PDOException $e){
         echo $sql . "<br>" . $e->getMessage();
     }
