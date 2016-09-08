@@ -18,9 +18,13 @@ require_once 'header.php';
     $tables = 'user';
 
     try {
-        $pdo -> find($tables,"account = '.$account.'");
-        $result = true ;
-        echo $result;
+        if($pdo -> find($tables,"account = '.$account.'")){
+            echo true;
+        }else{
+            echo false;
+            echo "用户不存在";
+        }
+
     }catch (PDOException $e){
         echo $sql . "<br>" . $e->getMessage();
     }
