@@ -12,7 +12,7 @@
  * 4、****?act=getRemark&r_id=***      获得评论详情
  * 5、****?act= getUserInfo            获得用户信息
  *
- * 都会返回输出你要的数据 200ok
+ * 都会返回输出你要的数据 已经json化 200ok
  */
 require_once 'header.php';
 

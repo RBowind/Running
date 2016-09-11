@@ -15,7 +15,7 @@
     'description'=>$_POST['description'],
     '@account'=>$_POST['@account'],
     'runtime'=>$_POST['runtime']
- * 成功返回活动信息。200.
+ * 成功返回活动信息 json 化。200.
  * Time: 17:03
  */
 require_once 'header.php';
@@ -40,7 +40,8 @@ class activity
 
 
 
-    public function postActivity(){
+    public function postActivity()
+    {
         $pdo = new PdoMySQL();
         $data = array(
             'a_id' => self::setAId($this->a_id) ,
