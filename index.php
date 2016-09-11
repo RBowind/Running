@@ -30,7 +30,7 @@ class index
     public function getLatestActivities()
     {
         try{
-            if ($activity=$GLOBALS['pdo']->find('activity'))
+            if ($activity=$GLOBALS['pdo']->find('activity',null,'*',null,null,null,'0,10'))
             {
                  $a =array(
                      'array' => array()
