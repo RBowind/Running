@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: RBowi
+ * User: RBowind
  * Date: 2016/7/16
  * Time: 20:14
  */
@@ -23,12 +23,3 @@ function JsonEcho($array){
     }
     echo  urldecode (json_encode ($array ));
 }
-
-/*function Json($array){
-    foreach ( $array as $key => $value ) {
-        $array[$key] = urlencode ( $value );
-    }
-       urldecode (json_encode ($array ));
-}*/
-
-
