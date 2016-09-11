@@ -53,21 +53,30 @@ $password = md5($_POST['password']);
 
                         $_SESSION['account'] = $account;
 
-                        echo true;
+                        $result = [
+                            '1' => "hello",
+                            '2' => $account
+                        ];
 
-                        return true;
+                        echo json_encode($result);
 
                     }else{
 
-                        echo '密码错误';
+                        $result1 = [
+                            'wrong1' => "Wrong Password!"
+
+                        ];
+
+                       echo json_encode($result1);
+
                     }
             }else{
 
-                    echo false;
+                $result2 = [
+                    'wrong2'=>"This account is Not exist!"
+                ];
 
-                    echo "用户名不存在";
-
-                    return false;
+                echo json_encode($result2);
 
                 }
         }catch (PDOException $e){
