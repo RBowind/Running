@@ -30,10 +30,11 @@ $GLOBALS['pdo'] = new PdoMySQL();
         public function getActivity()
         {
             try{
-                $array = $GLOBALS['pdo'] ->find('activity',"a_id = '".$_GET['a_id']."'") ;
-                foreach ($array as $key=>$value){
-                    echo $key.' : '.$value."<br/>";
-                }
+               if($array = $GLOBALS['pdo'] ->find('activity',"a_id = '".$_GET['a_id']."'"))
+               {
+                   JsonEcho($array);
+               }
+
             }catch (PDOException $e){
                 echo '查询失败，请稍后重试。';
             }
@@ -49,13 +50,14 @@ $GLOBALS['pdo'] = new PdoMySQL();
             try{
                 if($a_ids = $GLOBALS['pdo'] ->find('user_activity',"account = '".$_SESSION['account']."'",'a_id'))
                 {
-
+                    $array =array(
+                        'array' => array()
+                    );
                     for ($i =0;$i<count($a_ids);$i++){
                         $user_Activities = $GLOBALS['pdo'] ->find('activity',"a_id = '".$a_ids["$i"]['a_id']."'") ;
-                         echo json_encode($user_Activities) ;
-                        echo "<br>";
-
+                        array_push($array['array'],$user_Activities);
                     }
+                   echo json_encode($array);
                 }
             }catch (PDOException $e){
                 echo '查询失败，请稍后重试。';
@@ -70,10 +72,11 @@ $GLOBALS['pdo'] = new PdoMySQL();
         {
             try{
 
-                $array = $GLOBALS['pdo'] ->find('thought',"t_id = '".$_GET['t_id']."'") ;
-                foreach ($array as $key=>$value){
-                    echo $key.' : '.$value."<br/>";
+                if($array = $GLOBALS['pdo'] ->find('thought',"t_id = '".$_GET['t_id']."'"))
+                {
+                    JsonEcho($array);
                 }
+
             }catch (PDOException $e){
                 echo '查询失败，请稍后重试。';
             }
@@ -86,11 +89,22 @@ $GLOBALS['pdo'] = new PdoMySQL();
         public function getUserThoughts()
         {
             try{
-                $array = $GLOBALS['pdo'] ->find('thought',"account = '".$_SESSION['account']."'") ;
-                for($i=0;$i<count($array);$i++){
-                    echo json_encode($array[$i]);
-                    echo "<br>";
+                if($thought = $GLOBALS['pdo'] ->find('thought',"account = '".$_SESSION['account']."'"))
+                {
+                    $array =array(
+                        'array' => array()
+                    );
+
+                    for($i=0;$i<count($thought);$i++){
+                        array_push($array['array'],$thought[$i]);
+                    }
+
+                    echo json_encode($array);
+
                 }
+
+
+
 
             }catch (PDOException $e){
                 echo '查询失败，请稍后重试。';
@@ -104,10 +118,11 @@ $GLOBALS['pdo'] = new PdoMySQL();
         public function getRemark()
         {
             try {
-                $array = $GLOBALS['pdo']->find('remark', "r_id = '" . $_GET ['r_id'] . "'");
-                foreach ($array as $key => $value) {
-                    echo $key . ' : ' . $value . "<br/>";
+                if($remark = $GLOBALS['pdo']->find('remark', "r_id = '" . $_GET ['r_id'] . "'"))
+                {
+                    JsonEcho($remark);
                 }
+
             }catch (PDOException $e){
                 echo '查询失败，请稍后重试。';
             }
@@ -120,9 +135,9 @@ $GLOBALS['pdo'] = new PdoMySQL();
         public function getUserInfo()
         {
             try{
-                $array = $GLOBALS['pdo'] ->find('userinfo',"account = '".$_SESSION['account']."'") ;
-                foreach ($array as $key => $value) {
-                    echo $key . ' : ' . $value . "<br/>";
+                if($userInfo = $GLOBALS['pdo'] ->find('userinfo',"account = '".$_SESSION['account']."'"))
+                {
+                    JsonEcho($userInfo);
                 }
             }catch (PDOException $e){
                 echo '查询失败，请稍后重试。';
