@@ -13,7 +13,7 @@
     'p_number'=> $_POST['p_number'],
     'distance'=>$_POST['distance'],
     'description'=>$_POST['description'],
-    '@account'=>$_POST['@account'],
+    'toAccount'=>$_POST['toAccount'],
     'runtime'=>$_POST['runtime']
  * 成功返回活动信息 json 化。200.
  * Time: 17:03
@@ -51,7 +51,7 @@ class activity
             'p_number'=> $_POST['p_number'],
             'distance'=>$_POST['distance'],
             'description'=>$_POST['description'],
-            '@account'=>$_POST['@account'],
+            'toAccount'=>$_POST['toAccount'],
             'runtime'=>$_POST['runtime']
         );
         $pdo -> add($data,'activity');
