@@ -9,44 +9,82 @@ require_once 'header.php';
 
 $GLOBALS['pdo'] = new PdoMySQL();
 
+
+
 class index
 {
-    /**
-     * @param mixed $pdo
-     */
-    public function __set($name, $value)
-    {
-        // TODO: Implement __set() method.
-        $this->name = $value;
-    }
 
-    public function __get($name)
-    {
-        // TODO: Implement __get() method.
-        return $this->name;
-    }
+    public $time;
+
+
+
+
+
+
+    /*//设置每页数量
+     $pageSize = $this->pageSize = 3;
+
+    //得到数据总行数
+    $sql = 'SELECT COUNT(*) FROM activity';
+
+    $row = $GLOBALS['pdo']->getAll($sql);
+
+    $rows = $this->rows = $row[0]['COUNT(*)'];
+
+    //得到页数n
+    $this->pages = intval($rows/$pageSize) ;
+
+    //判断当前页数
+    $nowPage = isset($_GET['page']) ? intval($_GET['page']) : 1;
+
+    //偏移量
+    $this->offset = ($nowPage-1)*$pageSize;*/
+
+
+
+
+
 
 
     public function getLatestActivities()
     {
+
+        //得到一个月前时间
+        date_default_timezone_set('Asia/Shanghai');
+
+        $this->time= date("Y-m-d",mktime(0,0,0,date("m")-1,date("d"),date("Y")));
+
+        //设置每页数量
+        $pageSize = $this->pageSize = 2;
+
+        //得到数据总行数
+        $sql = 'SELECT COUNT(*) FROM activity';
+
+        $row = $GLOBALS['pdo']->getAll($sql);
+
+        $rows = $this->rows = $row[0]['COUNT(*)'];
+
+        //得到页数n
+        $this->pages = intval($rows/$pageSize) ;
+
+        //判断当前页数
+        $nowPage = isset($_GET['page']) ? intval($_GET['page']) : 1;
+
+        //偏移量
+        $this->offset = ($nowPage-1)*$pageSize;
+
         try{
-            if ($activity=$GLOBALS['pdo']->find('activity',null,'*',null,null,null,'0,10'))
+            if ($activity=$GLOBALS['pdo']->find('activity',"postTime >'$this->time'",'*',null,null,null,"$this->offset,$this->pageSize"))
             {
                  $a =array(
                      'array' => array()
                  );
 
-                for ($i=0;$i<count($activity);$i++){
-
-                    /*$a = array(
-                        'array'=>array(
-                            $activity[$i],
-                        )
-                    );*/
-
-                array_push($a['array'],$activity[$i]);
+                for ($i=0;$i<count($activity);$i++)
+                {
+                    array_push($a['array'],$activity[$i]);
                 }
-               // unset($activities[0]);
+
                 echo json_encode($a);
 
             }
@@ -57,5 +95,12 @@ class index
 
 }
 
-$test = new index();
-$test->getLatestActivities();
+    $test = new index();
+
+    $test->getLatestActivities();
+
+
+
+
+
+
