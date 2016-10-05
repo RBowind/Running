@@ -55,7 +55,7 @@ class index
         $this->time= date("Y-m-d",mktime(0,0,0,date("m")-1,date("d"),date("Y")));
 
         //设置每页数量
-        $pageSize = $this->pageSize = 2;
+        $pageSize = $this->pageSize = 10;
 
         //得到数据总行数
         $sql = 'SELECT COUNT(*) FROM activity';
