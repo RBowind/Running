@@ -13,7 +13,7 @@
     'p_number'=> $_POST['p_number'],
     'distance'=>$_POST['distance'],
     'description'=>$_POST['description'],
-    '@account'=>$_POST['@account'],
+    'toAccount'=>$_POST['toAccount'],
     'runtime'=>$_POST['runtime']
  * 成功返回活动信息 json 化。200.
  * Time: 17:03
@@ -29,12 +29,24 @@ class activity
 {
 
     public  $a_id ;
+    public $time;
+
+    /**
+     * @param mixed $time
+     */
+    public function setTime($time)
+    {
+        date_default_timezone_set('Asia/Shanghai');
+        $time=date("Y-m-d H:i:s");
+        $this->time = $time;
+        return $this->time;
+    }
+
 
     public function setAId($a_id)
     {
-        date_default_timezone_set('Asia/Shanghai');
-         $time=date("Y-m-d H:i:s");
-        $this->a_id =$_SESSION['account'].$time;
+
+        $this->a_id =$_SESSION['account'].self::setTime($this->time);
         return $this->a_id;
     }
 
@@ -51,8 +63,9 @@ class activity
             'p_number'=> $_POST['p_number'],
             'distance'=>$_POST['distance'],
             'description'=>$_POST['description'],
-            '@account'=>$_POST['@account'],
-            'runtime'=>$_POST['runtime']
+            'toAccount'=>$_POST['toAccount'],
+            'runtime'=>$_POST['runtime'],
+            'time'=>self::setTime($this->time)
         );
         $pdo -> add($data,'activity');
         var_dump($data);
