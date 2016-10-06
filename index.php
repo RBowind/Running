@@ -74,7 +74,7 @@ class index
         $this->offset = ($nowPage-1)*$pageSize;
 
         try{
-            if ($activity=$GLOBALS['pdo']->find('activity',"postTime >'$this->time'",'*',null,null,null,"$this->offset,$this->pageSize"))
+            if ($activity=$GLOBALS['pdo']->find('activity',"postTime >'$this->time'",'*',null,null,'time desc',"$this->offset,$this->pageSize"))
             {
                  $a =array(
                      'array' => array()
