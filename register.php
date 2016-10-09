@@ -41,8 +41,9 @@ $password = md5($_POST['password']);
                     '1' => "register successfully!",
                     '2' => $account
                 ];
-
+		echo true;
                 echo json_encode($result);
+		header("Location: userinfo.php");
 
             }
 
@@ -64,8 +65,9 @@ $password = md5($_POST['password']);
                             '1' => "hello",
                             '2' => $account
                         ];
+			echo true;
 
-                        echo json_encode($result);
+                      //  echo json_encode($result);
 
                     }else{
 
@@ -73,7 +75,7 @@ $password = md5($_POST['password']);
                             'wrong1' => "Wrong Password!"
 
                         ];
-
+			echo 0;
                        echo json_encode($result1);
 
                     }
@@ -82,7 +84,7 @@ $password = md5($_POST['password']);
                 $result2 = [
                     'wrong2'=>"This account is Not exist!"
                 ];
-
+		echo 0;
                 echo json_encode($result2);
 
                 }

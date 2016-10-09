@@ -6,7 +6,7 @@
  * Date: 2016/8/25
  * Time: 16:34
  * 功能：实现评论功能。此功能必登录来保持session。
- * 通过get方法传递 act的值remark 以及 a_id 或 t_id 的值，例如:
+ * 通过get方法传递 act的值remark 以及 a_id 或 t_id 的值，例如
  * http://localhost/running/remark.php?act=remark&a_id=admin2016-08-06 14:59:52
  * 内容用JSON格式，传递的活动信息用post方法：
  *

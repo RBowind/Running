@@ -22,6 +22,7 @@ require_once 'header.php';
             $result = [
                 'wrong' => "The account has been registered"
             ];
+	    echo 0;
             echo json_encode($result);
         }else{
             echo true ;

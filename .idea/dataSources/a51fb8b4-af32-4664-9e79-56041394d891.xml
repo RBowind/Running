@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - running@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="running">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="information_schema"/>
+    <schema id="3" name="mysql"/>
+    <schema id="4" name="performance_schema"/>
+    <schema id="5" name="phpmyadmin"/>
+    <schema id="6" name="test"/>
+    <table id="7" parent="1" name="activity"/>
+    <table id="8" parent="1" name="remark"/>
+    <table id="9" parent="1" name="thought"/>
+    <table id="10" parent="1" name="user"/>
+    <table id="11" parent="1" name="user_activity"/>
+    <table id="12" parent="1" name="user_remark"/>
+    <table id="13" parent="1" name="userinfo"/>
+    <column id="14" parent="7" name="id">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="15" parent="7" name="a_id">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="16" parent="7" name="postTime">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="17" parent="7" name="route">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="18" parent="7" name="address">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="19" parent="7" name="p_number">
+      <mandatory>1</mandatory>
+      <data-type>int(10)|0</data-type>
+    </column>
+    <column id="20" parent="7" name="distance">
+      <mandatory>1</mandatory>
+      <data-type>float|0</data-type>
+    </column>
+    <column id="21" parent="7" name="description">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="22" parent="7" name="toAccount">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="23" parent="7" name="runtime">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="24" parent="7" name="time">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <index id="25" parent="7" name="a_id">
+      <columns>a_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="26" parent="7" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="27" parent="7" name="a_id">
+      <columns>a_id</columns>
+      <underlying-index>a_id</underlying-index>
+    </key>
+    <foreign-key id="28" parent="7" name="activity_ibfk_1">
+      <columns>a_id</columns>
+      <ref-key>~.user_activity.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
+    <column id="29" parent="8" name="r_id">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="30" parent="8" name="a_id">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="31" parent="8" name="t_id">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="32" parent="8" name="account">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="33" parent="8" name="content">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="34" parent="8" name="time">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <index id="35" parent="8" name="account">
+      <columns>account</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="36" parent="8" name="a_id">
+      <columns>a_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="37" parent="8" name="t_id">
+      <columns>t_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="38" parent="8" name="PRIMARY">
+      <columns>r_id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="39" parent="9" name="t_id">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="40" parent="9" name="@account">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="41" parent="9" name="account">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="42" parent="9" name="postTime">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="43" parent="9" name="content">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="44" parent="9" name="routesMap">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <index id="45" parent="9" name="account">
+      <columns>account</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="46" parent="9" name="PRIMARY">
+      <columns>t_id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="47" parent="9" name="thought_ibfk_1">
+      <columns>account</columns>
+      <ref-key>~.userinfo.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="48" parent="10" name="user_id">
+      <mandatory>1</mandatory>
+      <data-type>bigint(100)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="49" parent="10" name="account">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="50" parent="10" name="password">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <index id="51" parent="10" name="account">
+      <columns>account</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="52" parent="10" name="PRIMARY">
+      <columns>user_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="53" parent="10" name="account">
+      <columns>account</columns>
+      <underlying-index>account</underlying-index>
+    </key>
+    <column id="54" parent="11" name="a_id">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="55" parent="11" name="account">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <index id="56" parent="11" name="account">
+      <columns>account</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="57" parent="11" name="PRIMARY">
+      <columns>a_id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="58" parent="11" name="user_activity_ibfk_1">
+      <columns>account</columns>
+      <ref-key>~.user.account</ref-key>
+      <cascade-update-rule>update</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
+    <column id="59" parent="12" name="id">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="60" parent="12" name="r_account">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="61" parent="12" name="account">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <index id="62" parent="12" name="account">
+      <columns>account</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="63" parent="12" name="r_account">
+      <columns>r_account</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="64" parent="12" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="65" parent="13" name="account">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="66" parent="13" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="67" parent="13" name="tel">
+      <mandatory>1</mandatory>
+      <data-type>varchar(13)|0</data-type>
+    </column>
+    <column id="68" parent="13" name="age">
+      <mandatory>1</mandatory>
+      <data-type>int(30)|0</data-type>
+    </column>
+    <column id="69" parent="13" name="introduce">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="70" parent="13" name="school">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="71" parent="13" name="photo">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <key id="72" parent="13" name="PRIMARY">
+      <columns>account</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="73" parent="13" name="userinfo_ibfk_1">
+      <columns>account</columns>
+      <ref-key>~.user.account</ref-key>
+      <cascade-update-rule>update</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
+  </database-model>
+</dataSource>

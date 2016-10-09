@@ -10,7 +10,7 @@
  * 2、****?act=getThought$t_id=****    获得感想详情
  * 3、 ****?act=getUserThought         获得用户所有发布感想以及详情
  * 4、****?act=getRemark&r_id=***      获得评论详情
- * 5、****?act= getUserInfo            获得用户信息
+ * 5、****?act=getUserInfo&account=***            获得用户信息
  *
  * 都会返回输出你要的数据 已经json化 200ok
  */
@@ -115,7 +115,7 @@ $GLOBALS['pdo'] = new PdoMySQL();
     class getRemark                 //根据 评论ID 得到评论详情
     {
 
-        public function getRemark()
+        public function getOneRemark()
         {
             try {
                 if($remark = $GLOBALS['pdo']->find('remark', "r_id = '" . $_GET ['r_id'] . "'"))
@@ -123,6 +123,27 @@ $GLOBALS['pdo'] = new PdoMySQL();
                     JsonEcho($remark);
                 }
 
+            }catch (PDOException $e){
+                echo '查询失败，请稍后重试。';
+            }
+        }
+
+        public function getActivityRemark()
+        {
+            try{
+                if ($allremark = $GLOBALS['pdo']->find('remark',"a_id = '" . $_GET ['a_id'] . "'"))
+                {
+                    $array =array(
+                        'array' => array()
+                    );
+
+                    for($i=0;$i<count($allremark);$i++){
+                        array_push($array['array'],$allremark[$i]);
+                    }
+
+                    echo json_encode($array);
+
+                }
             }catch (PDOException $e){
                 echo '查询失败，请稍后重试。';
             }
@@ -135,7 +156,7 @@ $GLOBALS['pdo'] = new PdoMySQL();
         public function getUserInfo()
         {
             try{
-                if($userInfo = $GLOBALS['pdo'] ->find('userinfo',"account = '".$_SESSION['account']."'"))
+                if($userInfo = $GLOBALS['pdo'] ->find('userinfo',"account = '".$_GET['account']."'"))
                 {
                     JsonEcho($userInfo);
                 }
@@ -164,9 +185,14 @@ $GLOBALS['pdo'] = new PdoMySQL();
             break;
         case "getRemark":
             $getRemark = new getRemark();
+            $getRemark->getOneRemark();
             break;
         case "getUserInfo":
             $getUserInfo = new getUserInfo();
+            break;
+        case "getActivityRemark":
+            $getActivityRemark = new getRemark();
+            $getActivityRemark->getActivityRemark();
             break;
     }
 

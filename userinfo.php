@@ -26,9 +26,9 @@ $school = $_POST['school'];*/
 
 $_POST['account'] = $_SESSION['account'];
 
-    if ($act==='addinfo'){
+    if ($_POST['account']){
         try {
-            $pdo ->add( $_POST,'userinfo' );
+            $pdo ->add( $_POST,'userinfo');
 
             $result = json_encode($_POST);
 

@@ -46,7 +46,7 @@ class activity
     public function setAId($a_id)
     {
 
-        $this->a_id =$_SESSION['account'].self::setTime($this->time);
+        $this->a_id =$_SESSION['account'].time();
         return $this->a_id;
     }
 
