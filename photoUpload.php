@@ -1,5 +1,17 @@
 <?php
 
+function addPhotoUrl($url)
+{
+    session_start();
+    require_once 'PdoMySQL.class.php';
+    require_once 'config.php';
+    $pdo = new PdoMySQL();
+    $account = $_SESSION['account'];
+    $photoUrl = array(
+      'photo' => $url
+    );
+    $pdo -> update($photoUrl,'userinfo','account ="'.$account.'"');
+}
 
 function extend($file_name)
 {
@@ -43,11 +55,14 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] =="POST" ) {
     if(move_uploaded_file($tmp,$path.$imageName))
     {
     echo '<img src="'.$path.$imageName.'" class ="preview">';
-    echo 'success!';
+        if(addPhotoUrl("http://120.27.107.121/photo/$imageName"))
+        {
+            echo 'url upload successful!';
+        }
     }else{
     echo "Upload failed!";
-        echo $_FILES['file']['tmp_name'];
-        echo $_FILES['file']['size'];
+       /* echo $_FILES['file']['tmp_name'];
+        echo $_FILES['file']['size'];*/
     }
 
     exit();
