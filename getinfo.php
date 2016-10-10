@@ -11,6 +11,7 @@
  * 3、 ****?act=getUserThought         获得用户所有发布感想以及详情
  * 4、****?act=getRemark&r_id=***      获得评论详情
  * 5、****?act=getUserInfo&account=***            获得用户信息
+ * 6、****?act=getActivityRemark&a_id=***     获得该活动所有评论
  *
  * 都会返回输出你要的数据 已经json化 200ok
  */
