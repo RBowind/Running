@@ -66,8 +66,8 @@ $password = md5($_POST['password']);
                             '2' => $account
                         ];
 			echo true;
-
-                      //  echo json_encode($result);
+                        echo json_encode($result);
+                        echo $_SESSION['account'];
 
                     }else{
 
@@ -86,6 +86,7 @@ $password = md5($_POST['password']);
                 ];
 		echo 0;
                 echo json_encode($result2);
+
 
                 }
         }catch (PDOException $e){

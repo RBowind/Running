@@ -16,11 +16,11 @@
  * 都会返回输出你要的数据 已经json化 200ok
  */
 require_once 'header.php';
-
+/*
 if(!isset($_SESSION['account']))
 {
     exit("请注册或登录");
-}
+}*/
 
 $GLOBALS['pdo'] = new PdoMySQL();
 
@@ -46,19 +46,70 @@ $GLOBALS['pdo'] = new PdoMySQL();
     }
     class getUserActivity
     {
+        public $pagesize = 5 ;   //定义每页数量
+
         public function getUserActivitity()
         {
-            try{
-                if($a_ids = $GLOBALS['pdo'] ->find('user_activity',"account = '".$_SESSION['account']."'",'a_id'))
+
+            $a_id = $GLOBALS['pdo'] ->find('user_activity',"account = '".$_SESSION['account']."'",'a_id');
+            //得到页数 n
+            $pages = intval(count($a_id)/$this->pagesize);
+
+            //判断当前页数
+            $nowpage = isset($_GET['page'])?intval($_GET['page']) : 1;
+
+            //偏移量
+            $this->offset = ($nowpage-1)*$this->pagesize;
+
+            try
+            {
+                if($a_ids = $GLOBALS['pdo'] ->find('user_activity',"account = '".$_SESSION['account']."'",'a_id',null,null,'time desc',"$this->offset,$this->pagesize"))
                 {
                     $array =array(
                         'array' => array()
                     );
-                    for ($i =0;$i<count($a_ids);$i++){
-                        $user_Activities = $GLOBALS['pdo'] ->find('activity',"a_id = '".$a_ids["$i"]['a_id']."'") ;
+
+                    //当用户发布的活动只有1条时，$a_ids["$i"]['a_id']取值会出现bug，所以分类对待。但是影响速度啊。。。
+                    if (count($a_ids)==1)
+                    {
+                        $user_Activities = $GLOBALS['pdo'] ->find('activity',"a_id = '".$a_ids['a_id']."'") ;
                         array_push($array['array'],$user_Activities);
+                        echo json_encode($array);
+                    }else {
+                        for ($i=0;$i<count($a_ids);$i++)
+                        {
+                            $user_Activities = $GLOBALS['pdo'] ->find('activity',"a_id = '".$a_ids["$i"]['a_id']."'") ;
+                            array_push($array['array'],$user_Activities);
+                        }
+                        echo json_encode($array);
                     }
-                   echo json_encode($array);
+                }
+            }catch (PDOException $e){
+                echo '查询失败，请稍后重试。';
+            }
+        }
+        public function getActivityRemark()
+        {
+            try{
+                $a_id = $_GET['a_id'];
+                $sql = "SELECT * FROM remark WHERE a_id='$a_id' ";
+
+                //count($row)是查询得到的数目
+                $row =$GLOBALS['pdo']->getAll($sql);
+
+
+                if ($allremark = $GLOBALS['pdo']->find('remark',"a_id = '" . $_GET ['a_id'] . "'"))
+                {
+                    $array =array(
+                        'array' => array()
+                    );
+
+                    for($i=0;$i<count($row);$i++){
+                        array_push($array['array'],$allremark[$i]);
+                    }
+
+                    echo json_encode($array);
+
                 }
             }catch (PDOException $e){
                 echo '查询失败，请稍后重试。';
@@ -128,27 +179,6 @@ $GLOBALS['pdo'] = new PdoMySQL();
                 echo '查询失败，请稍后重试。';
             }
         }
-
-        public function getActivityRemark()
-        {
-            try{
-                if ($allremark = $GLOBALS['pdo']->find('remark',"a_id = '" . $_GET ['a_id'] . "'"))
-                {
-                    $array =array(
-                        'array' => array()
-                    );
-
-                    for($i=0;$i<count($allremark);$i++){
-                        array_push($array['array'],$allremark[$i]);
-                    }
-
-                    echo json_encode($array);
-
-                }
-            }catch (PDOException $e){
-                echo '查询失败，请稍后重试。';
-            }
-        }
     }
 
     class getUserInfo       //根据用户名得到用户信息详情
@@ -168,6 +198,7 @@ $GLOBALS['pdo'] = new PdoMySQL();
     }
 
     $act = $_GET['act'];
+
     switch ($act)
     {
         case "getActivity":
@@ -176,6 +207,10 @@ $GLOBALS['pdo'] = new PdoMySQL();
         case "getUserActivity":
             $getUserActivity = new getUserActivity();
             $getUserActivity->getUserActivitity();
+            break;
+        case "getActivityRemark":
+            $getActivityRemark = new getUserActivity();
+            $getActivityRemark->getActivityRemark();
             break;
         case "getThought":
             $getThought = new getThought();
@@ -191,9 +226,6 @@ $GLOBALS['pdo'] = new PdoMySQL();
         case "getUserInfo":
             $getUserInfo = new getUserInfo();
             break;
-        case "getActivityRemark":
-            $getActivityRemark = new getRemark();
-            $getActivityRemark->getActivityRemark();
-            break;
+
     }
 

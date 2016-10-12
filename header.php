@@ -12,6 +12,7 @@ require_once 'config.php';
 session_start();
 header('content-type:text/json;charset=utf-8');
 header('Access-Control-Allow-Headers: "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"');
+
 //将post提交的格式转化为JSON格式
 $postJson = file_get_contents('php://input');
 $_POST = json_decode($postJson, true);

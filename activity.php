@@ -78,7 +78,8 @@ class adduseractivity extends activity
             $pdo1 = new PdoMySQL();
             $userActivity = array(
                 'account'=>$_SESSION['account'],
-                'a_id' => self::setAId($this->a_id)
+                'a_id' => self::setAId($this->a_id),
+                'time'=>self::setTime($this->time)
             );
             $pdo1 -> add($userActivity,'user_activity');
             var_dump($userActivity);

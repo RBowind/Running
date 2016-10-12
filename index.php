@@ -16,11 +16,6 @@ class index
 
     public $time;
 
-
-
-
-
-
     /*//设置每页数量
      $pageSize = $this->pageSize = 3;
 
@@ -40,12 +35,6 @@ class index
     //偏移量
     $this->offset = ($nowPage-1)*$pageSize;*/
 
-
-
-
-
-
-
     public function getLatestActivities()
     {
 
@@ -58,11 +47,11 @@ class index
         $pageSize = $this->pageSize = 10;
 
         //得到数据总行数
-        $sql = 'SELECT COUNT(*) FROM activity';
+        $sql = 'SELECT * FROM activity';
 
         $row = $GLOBALS['pdo']->getAll($sql);
 
-        $rows = $this->rows = $row[0]['COUNT(*)'];
+        $rows = $this->rows = count($row);
 
         //得到页数n
         $this->pages = intval($rows/$pageSize) ;

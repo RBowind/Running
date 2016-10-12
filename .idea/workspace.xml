@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8603bae0-2c8b-4fa3-9f57-2dab82898475" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activity.php" afterPath="$PROJECT_DIR$/activity.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getinfo.php" afterPath="$PROJECT_DIR$/getinfo.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/header.php" afterPath="$PROJECT_DIR$/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/photoUpload.php" afterPath="$PROJECT_DIR$/photoUpload.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register.php" afterPath="$PROJECT_DIR$/register.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/remark.php" afterPath="$PROJECT_DIR$/remark.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/search.php" afterPath="$PROJECT_DIR$/search.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userinfo.php" afterPath="$PROJECT_DIR$/userinfo.php" />
     </list>
     <ignored path="running.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,23 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1704">
-              <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-              <folding>
-                <marker date="1475760368148" expanded="true" signature="894:923" ph="SELECT COUNT... activity" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PdoMySQL.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PdoMySQL.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9720">
-              <caret line="405" column="41" selection-start-line="405" selection-start-column="41" selection-end-line="405" selection-end-column="41" />
+            <state relative-caret-position="8664">
+              <caret line="361" column="32" selection-start-line="361" selection-start-column="32" selection-end-line="361" selection-end-column="32" />
               <folding>
                 <marker date="1474443912334" expanded="true" signature="2418:2447" ph="SELECT %s FR... " />
                 <marker date="1474443912334" expanded="true" signature="4606:4634" ph="UPDATE ${{$t... " />
@@ -66,31 +52,50 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="getinfo.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/getinfo.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+              <folding>
+                <element signature="n#getThought#0;n#!!top" expanded="false" />
+                <element signature="n#getUserThought#0;n#!!top" expanded="false" />
+                <marker date="1476197747431" expanded="true" signature="2879:2892" ph="SELECT COUNT... " />
+                <marker date="1476197747431" expanded="true" signature="2879:2905" ph="SELECT COUNT... remark" />
+                <marker date="1476197747431" expanded="true" signature="2879:2911" ph="SELECT COUNT... remark" />
+                <marker date="1476197747431" expanded="true" signature="2879:2918" ph="SELECT * FRO... remark" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+              <folding>
+                <marker date="1476261099703" expanded="true" signature="883:905" ph="SELECT COUNT... activity" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="activity.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/activity.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
+            <state relative-caret-position="282">
+              <caret line="60" column="37" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="photoUpload.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="photoUpload.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/photoUpload.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="42" column="49" selection-start-line="42" selection-start-column="49" selection-end-line="42" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="getinfo.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/getinfo.php">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
-              <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+              <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -99,14 +104,53 @@
       <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+            <state relative-caret-position="264">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding>
+                <element signature="e#6#88#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/register.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1656">
+              <caret line="69" column="47" selection-start-line="69" selection-start-column="47" selection-end-line="69" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="updateinfo.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/updateinfo.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="576">
+              <caret line="24" column="70" selection-start-line="24" selection-start-column="70" selection-end-line="24" selection-end-column="70" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="remark.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/remark.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -118,10 +162,13 @@
         <option value="dbtable:/b59aa907/a51fb8b4-af32-4664-9e79-56041394d891/running.activity" />
         <option value="$PROJECT_DIR$/test.php" />
         <option value="$PROJECT_DIR$/search.php" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/getinfo.php" />
-        <option value="$PROJECT_DIR$/activity.php" />
+        <option value="$PROJECT_DIR$/register.php" />
+        <option value="$PROJECT_DIR$/photo.html" />
+        <option value="$PROJECT_DIR$/photoUpload.php" />
         <option value="$PROJECT_DIR$/header.php" />
+        <option value="$PROJECT_DIR$/activity.php" />
+        <option value="$PROJECT_DIR$/getinfo.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -133,10 +180,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1696" />
-    <option name="height" value="1026" />
+    <option name="x" value="-7" />
+    <option name="width" value="1692" />
+    <option name="height" value="1017" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -207,6 +253,7 @@
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="last_opened_file_path" value="P:/WorkPlace/PureCool_community" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -273,7 +320,10 @@
       <workItem from="1475759583496" duration="1511000" />
       <workItem from="1475829033039" duration="1174000" />
       <workItem from="1475909891270" duration="3507000" />
-      <workItem from="1476023549378" duration="225000" />
+      <workItem from="1476023549378" duration="813000" />
+      <workItem from="1476097850211" duration="10276000" />
+      <workItem from="1476184311013" duration="11484000" />
+      <workItem from="1476261082193" duration="2322000" />
     </task>
     <task id="LOCAL-00001" summary="config.php">
       <created>1475563486213</created>
@@ -310,19 +360,33 @@
       <option name="project" value="LOCAL" />
       <updated>1475760495186</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="得到活动所有评论">
+      <created>1476098904167</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1476098904167</updated>
+    </task>
+    <task id="LOCAL-00007" summary="用户头像路径">
+      <created>1476109810608</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1476109810608</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22182000" />
+    <option name="totallyTimeSpent" value="46852000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="0" width="1692" height="1017" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15647922" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16176471" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295964" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14792176" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295964" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -357,19 +421,117 @@
     <MESSAGE value="添加了活动发送时刻字段" />
     <MESSAGE value="首页分页功能" />
     <MESSAGE value="最新时间查询" />
-    <option name="LAST_COMMIT_MESSAGE" value="最新时间查询" />
+    <MESSAGE value="得到活动所有评论" />
+    <MESSAGE value="用户头像路径" />
+    <option name="LAST_COMMIT_MESSAGE" value="用户头像路径" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/photoUpload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="16" column="2" selection-start-line="16" selection-start-column="0" selection-end-line="17" selection-end-column="40" />
+          <folding>
+            <element signature="e#6#88#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1656">
+          <caret line="69" column="47" selection-start-line="69" selection-start-column="47" selection-end-line="69" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/updateinfo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="24" column="70" selection-start-line="24" selection-start-column="70" selection-end-line="24" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userinfo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/remark.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getinfo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+          <folding>
+            <element signature="n#getThought#0;n#!!top" expanded="false" />
+            <element signature="n#getUserThought#0;n#!!top" expanded="false" />
+            <marker date="1476197747431" expanded="true" signature="2879:2892" ph="SELECT COUNT... " />
+            <marker date="1476197747431" expanded="true" signature="2879:2905" ph="SELECT COUNT... remark" />
+            <marker date="1476197747431" expanded="true" signature="2879:2911" ph="SELECT COUNT... remark" />
+            <marker date="1476197747431" expanded="true" signature="2879:2918" ph="SELECT * FRO... remark" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1704">
           <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
           <folding>
-            <marker date="1475760368148" expanded="true" signature="894:923" ph="SELECT COUNT... activity" />
+            <marker date="1476261099703" expanded="true" signature="883:905" ph="SELECT COUNT... activity" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PdoMySQL.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9720">
+          <caret line="405" column="41" selection-start-line="405" selection-start-column="41" selection-end-line="405" selection-end-column="41" />
+          <folding>
+            <marker date="1474443912334" expanded="true" signature="2418:2447" ph="SELECT %s FR... " />
+            <marker date="1474443912334" expanded="true" signature="4606:4634" ph="UPDATE ${{$t... " />
+            <marker date="1474443912334" expanded="true" signature="4996:5017" ph="DELETE FROM " />
+            <marker date="1474443912334" expanded="true" signature="9798:9877" ph="..." />
+            <marker date="1474443912334" expanded="true" signature="9878:9903" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1704">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding>
+            <marker date="1476261099703" expanded="true" signature="883:905" ph="SELECT COUNT... activity" />
           </folding>
         </state>
       </provider>
@@ -400,7 +562,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
           <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
-          <folding />
+          <folding>
+            <element signature="n#getThought#0;n#!!top" expanded="false" />
+            <element signature="n#getUserThought#0;n#!!top" expanded="false" />
+            <marker date="1476197747431" expanded="true" signature="2879:2892" ph="SELECT COUNT... " />
+            <marker date="1476197747431" expanded="true" signature="2879:2905" ph="SELECT COUNT... remark" />
+            <marker date="1476197747431" expanded="true" signature="2879:2911" ph="SELECT COUNT... remark" />
+            <marker date="1476197747431" expanded="true" signature="2879:2918" ph="SELECT * FRO... remark" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -408,7 +577,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#6#88#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -417,7 +588,7 @@
         <state relative-caret-position="1704">
           <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
           <folding>
-            <marker date="1475760368148" expanded="true" signature="894:923" ph="SELECT COUNT... activity" />
+            <marker date="1476261099703" expanded="true" signature="883:905" ph="SELECT COUNT... activity" />
           </folding>
         </state>
       </provider>
@@ -448,7 +619,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#getThought#0;n#!!top" expanded="false" />
+            <element signature="n#getUserThought#0;n#!!top" expanded="false" />
+            <marker date="1476197747431" expanded="true" signature="2879:2892" ph="SELECT COUNT... " />
+            <marker date="1476197747431" expanded="true" signature="2879:2905" ph="SELECT COUNT... remark" />
+            <marker date="1476197747431" expanded="true" signature="2879:2911" ph="SELECT COUNT... remark" />
+            <marker date="1476197747431" expanded="true" signature="2879:2918" ph="SELECT * FRO... remark" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -457,7 +635,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1475760368148" expanded="true" signature="894:923" ph="SELECT COUNT... activity" />
+            <marker date="1476261099703" expanded="true" signature="883:905" ph="SELECT COUNT... activity" />
           </folding>
         </state>
       </provider>
@@ -488,7 +666,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#getThought#0;n#!!top" expanded="false" />
+            <element signature="n#getUserThought#0;n#!!top" expanded="false" />
+            <marker date="1476197747431" expanded="true" signature="2879:2892" ph="SELECT COUNT... " />
+            <marker date="1476197747431" expanded="true" signature="2879:2905" ph="SELECT COUNT... remark" />
+            <marker date="1476197747431" expanded="true" signature="2879:2911" ph="SELECT COUNT... remark" />
+            <marker date="1476197747431" expanded="true" signature="2879:2918" ph="SELECT * FRO... remark" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -497,7 +682,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1475760368148" expanded="true" signature="894:923" ph="SELECT COUNT... activity" />
+            <marker date="1476261099703" expanded="true" signature="883:905" ph="SELECT COUNT... activity" />
           </folding>
         </state>
       </provider>
@@ -507,7 +692,7 @@
         <state relative-caret-position="912">
           <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
           <folding>
-            <marker date="1475760368148" expanded="true" signature="894:923" ph="SELECT COUNT... activity" />
+            <marker date="1476261099703" expanded="true" signature="883:905" ph="SELECT COUNT... activity" />
           </folding>
         </state>
       </provider>
@@ -537,7 +722,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
+          <folding>
+            <element signature="e#6#88#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -554,7 +741,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1475760368148" expanded="true" signature="894:923" ph="SELECT COUNT... activity" />
+            <marker date="1476261099703" expanded="true" signature="883:905" ph="SELECT COUNT... activity" />
           </folding>
         </state>
       </provider>
@@ -577,7 +764,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
+          <folding>
+            <element signature="e#6#88#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -612,14 +801,14 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/b59aa907/a51fb8b4-af32-4664-9e79-56041394d891/running.user_activity">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -641,40 +830,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/b59aa907/a51fb8b4-af32-4664-9e79-56041394d891/running.activity">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/userinfo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1704">
-          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1656">
+          <caret line="69" column="47" selection-start-line="69" selection-start-column="47" selection-end-line="69" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/updateinfo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="24" column="70" selection-start-line="24" selection-start-column="70" selection-end-line="24" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photoUpload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <marker date="1475760368148" expanded="true" signature="894:923" ph="SELECT COUNT... activity" />
+            <element signature="e#6#88#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/remark.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PdoMySQL.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9720">
-          <caret line="405" column="41" selection-start-line="405" selection-start-column="41" selection-end-line="405" selection-end-column="41" />
+        <state relative-caret-position="8664">
+          <caret line="361" column="32" selection-start-line="361" selection-start-column="32" selection-end-line="361" selection-end-column="32" />
           <folding>
             <marker date="1474443912334" expanded="true" signature="2418:2447" ph="SELECT %s FR... " />
             <marker date="1474443912334" expanded="true" signature="4606:4634" ph="UPDATE ${{$t... " />
@@ -685,35 +913,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/header.php">
+    <entry file="file://$PROJECT_DIR$/activity.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        <state relative-caret-position="282">
+          <caret line="60" column="37" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/activity.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
-          <folding />
+        <state relative-caret-position="312">
+          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+          <folding>
+            <marker date="1476261099703" expanded="true" signature="883:905" ph="SELECT COUNT... activity" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/getinfo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/photoUpload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="42" column="49" selection-start-line="42" selection-start-column="49" selection-end-line="42" selection-end-column="49" />
-          <folding />
+        <state relative-caret-position="264">
+          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+          <folding>
+            <element signature="n#getThought#0;n#!!top" expanded="false" />
+            <element signature="n#getUserThought#0;n#!!top" expanded="false" />
+            <marker date="1476197747431" expanded="true" signature="2879:2892" ph="SELECT COUNT... " />
+            <marker date="1476197747431" expanded="true" signature="2879:2905" ph="SELECT COUNT... remark" />
+            <marker date="1476197747431" expanded="true" signature="2879:2911" ph="SELECT COUNT... remark" />
+            <marker date="1476197747431" expanded="true" signature="2879:2918" ph="SELECT * FRO... remark" />
+          </folding>
         </state>
       </provider>
     </entry>
