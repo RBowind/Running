@@ -5,13 +5,13 @@
  * Date: 2016/8/28
  * Time: 11:29
  * 功能:各种查询。act通过get方法传递,记住：要登录！！！
- * eg:http://120.27.107.121/getinfo.php?act=getUserActivity   获得用户所有发布的活动以及详情
+ * eg:http://120.27.107.121/getinfo.php?act=getUserActivity&page=   获得用户所有发布的活动以及详情
  * 1、 ***?act=getActivity&a_id=****   获得活动详情
  * 2、****?act=getThought$t_id=****    获得感想详情
  * 3、 ****?act=getUserThought         获得用户所有发布感想以及详情
  * 4、****?act=getRemark&r_id=***      获得评论详情
  * 5、****?act=getUserInfo&account=***            获得用户信息
- * 6、****?act=getActivityRemark&a_id=***     获得该活动所有评论
+ * 6、****?act=getActivityRemark&a_id=***&page=     获得该活动所有评论
  *
  * 都会返回输出你要的数据 已经json化 200ok
  */
