@@ -42,7 +42,6 @@ class activity
         return $this->time;
     }
 
-
     public function setAId($a_id)
     {
 
@@ -71,6 +70,23 @@ class activity
         var_dump($data);
     }
 }
+class deleteActivity
+{
+    public function delectActivity()
+    {
+        $pdo2 = new PdoMySQL();
+        if($pdo2 -> delete('activity',"a_id='".$_GET['a_id']."'"))
+        {
+            $pdo2 ->delete('user_activity',"a_id='".$_GET['a_id']."'");
+            echo true;
+            if($pdo2 -> delete('remark',"a_id='".$_GET['a_id']."'")){
+                echo true;
+            }
+        }else{
+            echo 0;
+        }
+    }
+}
 class adduseractivity extends activity
 {
         public function addactivity()
@@ -86,7 +102,7 @@ class adduseractivity extends activity
         }
 }
 
-    $act = $_GET['act'];
+    @$act = $_GET['act'];
 
     if ($act ==='postActivity')
     {
@@ -99,4 +115,12 @@ class adduseractivity extends activity
         }catch (PDOException $e) {
             echo $sql . "<br>" . $e->getMessage();
         }
+    }else{
+        try{
+            $deleteActivity = new deleteActivity();
+            $deleteActivity ->delectActivity();
+        }catch (PDOException $e){
+            echo $sql . "<br>" . $e->getMessage();
+        }
+
     }
