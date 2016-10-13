@@ -97,8 +97,16 @@ $GLOBALS['pdo'] = new PdoMySQL();
                 //count($row)是查询得到的数目
                 $row =$GLOBALS['pdo']->getAll($sql);
 
+                //得到页数 n,然并卵
+              //  $pages = intval(($row)/$this->pagesize);
 
-                if ($allremark = $GLOBALS['pdo']->find('remark',"a_id = '" . $_GET ['a_id'] . "'"))
+                //判断当前页数
+                $nowpage = isset($_GET['page'])?intval($_GET['page']) : 1;
+
+                //偏移量
+                $this->offset = ($nowpage-1)*$this->pagesize;
+
+                if ($allremark = $GLOBALS['pdo']->find('remark',"a_id = '" . $_GET ['a_id'] . "'",null,null,null,'time desc',"$this->offset,$this->pagesize"))
                 {
                     $array =array(
                         'array' => array()
