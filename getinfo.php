@@ -92,6 +92,7 @@ $GLOBALS['pdo'] = new PdoMySQL();
         {
             try{
                 $a_id = $_GET['a_id'];
+
                 $sql = "SELECT * FROM remark WHERE a_id='$a_id' ";
 
                 //count($row)是查询得到的数目
@@ -106,17 +107,22 @@ $GLOBALS['pdo'] = new PdoMySQL();
                 //偏移量
                 $this->offset = ($nowpage-1)*$this->pagesize;
 
-                if ($allremark = $GLOBALS['pdo']->find('remark',"a_id = '" . $_GET ['a_id'] . "'",null,null,null,'time desc',"$this->offset,$this->pagesize"))
+                if ($allremark = $GLOBALS['pdo']->find('remark',"a_id = '" . $_GET ['a_id'] . "'",'*',null,null,'time desc',"$this->offset,$this->pagesize"))
                 {
                     $array =array(
                         'array' => array()
                     );
+                    if(count($row)==1){
+                        array_push($array['array'],$allremark);
+                        echo json_encode($array);
+                    }else{
+                        for($i=0;$i<count($allremark);$i++){
+                            array_push($array['array'],$allremark[$i]);
+                        }
 
-                    for($i=0;$i<count($row);$i++){
-                        array_push($array['array'],$allremark[$i]);
+                        echo json_encode($array);
                     }
 
-                    echo json_encode($array);
 
                 }
             }catch (PDOException $e){
