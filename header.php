@@ -26,3 +26,5 @@ function JsonEcho($array){
     }
     echo  urldecode (json_encode ($array ));
 }
+
+

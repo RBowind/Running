@@ -49,6 +49,15 @@ class activity
         return $this->a_id;
     }
 
+    public function setPhotoUrl($photoUrl)
+    {
+        $pdox = new PdoMySQL();
+        $account = $_SESSION['account'];
+        $sql = "SELECT photo FROM userinfo WHERE account ='$account'";
+        $photo = $pdox -> getrow($sql);
+        $photoUrl =$photo['photo'];
+        return $this->photoUrl = $photoUrl;
+    }
 
 
     public function postActivity()
@@ -64,7 +73,8 @@ class activity
             'description'=>$_POST['description'],
             'toAccount'=>$_POST['toAccount'],
             'runtime'=>$_POST['runtime'],
-            'time'=>self::setTime($this->time)
+            'time'=>self::setTime($this->time),
+            'photo' => self::setPhotoUrl($this->photoUrl)
         );
         $pdo -> add($data,'activity');
         var_dump($data);

@@ -17,7 +17,6 @@
  *
  */
     require_once'header.php';
-    include_once 'getPhoto.php';
     if(!isset($_SESSION['account']))
     {
         exit("请注册或登录");
@@ -58,7 +57,7 @@
         {
             $account = $_SESSION['account'];
             $pdo = new PdoMySQL();
-            $photo = getPhoto($account);
+
 
             $data = array(
                 'r_id' => self::setRId($this->r_id),

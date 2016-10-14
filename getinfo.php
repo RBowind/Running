@@ -9,13 +9,14 @@
  * 1、 ***?act=getActivity&a_id=****   获得活动详情
  * 2、****?act=getThought$t_id=****    获得感想详情
  * 3、 ****?act=getUserThought         获得用户所有发布感想以及详情
- * 4、****?act=getRemark&r_id=***      获得评论详情
+ * 4、****?act=getRemark               获得用户所有评论详情
  * 5、****?act=getUserInfo&account=***            获得用户信息
  * 6、****?act=getActivityRemark&a_id=***&page=     获得该活动所有评论
  *
  * 都会返回输出你要的数据 已经json化 200ok
  */
 require_once 'header.php';
+
 /*
 if(!isset($_SESSION['account']))
 {
@@ -110,17 +111,27 @@ $GLOBALS['pdo'] = new PdoMySQL();
                 if ($allremark = $GLOBALS['pdo']->find('remark',"a_id = '" . $_GET ['a_id'] . "'",'*',null,null,'time desc',"$this->offset,$this->pagesize"))
                 {
                     $array =array(
-                        'array' => array()
+                        'array' => array(
+
+                        )
                     );
+
+                    $photo = array(
+
+                    );
+
                     if(count($row)==1){
                         array_push($array['array'],$allremark);
                         echo json_encode($array);
+                     //   echo getPhoto($allremark['account']) ;
                     }else{
                         for($i=0;$i<count($allremark);$i++){
                             array_push($array['array'],$allremark[$i]);
+                         //   array_push($photo,$allremark[$i]['account']);
                         }
-
                         echo json_encode($array);
+
+
                     }
 
 
@@ -180,15 +191,40 @@ $GLOBALS['pdo'] = new PdoMySQL();
 
     class getRemark                 //根据 评论ID 得到评论详情
     {
+        public $pagesize = 10 ;
 
-        public function getOneRemark()
+        public function getUserRemark()
         {
-            try {
-                if($remark = $GLOBALS['pdo']->find('remark', "r_id = '" . $_GET ['r_id'] . "'"))
-                {
-                    JsonEcho($remark);
-                }
+            $sql = "SELECT * FROM remark WHERE account='".$_SESSION['account']."'";
+            //count($row)是查询得到的数目
+            $row =$GLOBALS['pdo']->getAll($sql);
 
+            //得到页数 n,然并卵
+            //$pages = intval(($row)/$this->pagesize);
+
+            //判断当前页数
+            $nowpage = isset($_GET['page'])?intval($_GET['page']) : 1;
+
+            //偏移量
+            $this->offset = ($nowpage-1)*$this->pagesize;
+
+            try {
+                if($userRemark = $GLOBALS['pdo']->find('remark',"account = '" . $_SESSION['account'] . "'",'*',null,null,'time desc',"$this->offset,$this->pagesize"))
+                {
+                    $array = array(
+                        'array' => array()
+                    );
+
+                    if(count($row)==1) {
+                        array_push($array['array'],$userRemark);
+                        echo json_encode($array);
+                    }else{
+                        for ($i=0;$i<count($userRemark);$i++) {
+                            array_push($array['array'], $userRemark[$i]);
+                        }
+                        echo json_encode($array);
+                    }
+                }
             }catch (PDOException $e){
                 echo '查询失败，请稍后重试。';
             }
@@ -235,7 +271,7 @@ $GLOBALS['pdo'] = new PdoMySQL();
             break;
         case "getRemark":
             $getRemark = new getRemark();
-            $getRemark->getOneRemark();
+            $getRemark->getUserRemark();
             break;
         case "getUserInfo":
             $getUserInfo = new getUserInfo();
