@@ -65,6 +65,7 @@ class activity
         $pdo = new PdoMySQL();
         $data = array(
             'a_id' => self::setAId($this->a_id) ,
+            'account' => $_SESSION['account'],
             'postTime'=> $_POST['postTime'],
             'route'=>$_POST['route'],
             'address'=>$_POST['address'],
