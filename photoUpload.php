@@ -10,7 +10,12 @@ function addPhotoUrl($url)
     $photoUrl = array(
       'photo' => $url
     );
-    $pdo -> update($photoUrl,'userinfo','account ="'.$account.'"');
+    if($pdo -> update($photoUrl,'userinfo','account ="'.$account.'"'))
+    {
+        $pdo ->
+        $pdo -> update($photoUrl,'activity','account ="'.$account.'"');
+        $pdo -> update($photoUrl,'remark','account ="'.$account.'"');
+    }
 }
 
 function extend($file_name)
