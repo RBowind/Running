@@ -55,8 +55,8 @@ class activity
         $account = $_SESSION['account'];
         $sql = "SELECT photo FROM userinfo WHERE account ='$account'";
         $photo = $pdox -> getrow($sql);
-        $photoUrl =$photo['photo'];
-        return $this->photoUrl = $photoUrl;
+        $this->photoUrl = $photoUrl =$photo['photo'];
+        return $this->photoUrl;
     }
 
 
@@ -109,9 +109,15 @@ class adduseractivity extends activity
                 'time'=>self::setTime($this->time)
             );
             $pdo1 -> add($userActivity,'user_activity');
+            $pdo1 -> add($userActivity,'joinActivity');
+
             var_dump($userActivity);
         }
+
+
+
 }
+
 
     @$act = $_GET['act'];
 
@@ -119,10 +125,13 @@ class adduseractivity extends activity
     {
         try
         {
+
             $user_activity = new adduseractivity();
-            $user_activity->addactivity();
             $postActivity = new activity();
             $postActivity->postActivity();
+            $user_activity->addactivity() ;
+
+
         }catch (PDOException $e) {
             echo $sql . "<br>" . $e->getMessage();
         }
