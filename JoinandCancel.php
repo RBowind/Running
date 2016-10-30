@@ -2,7 +2,10 @@
 /**
  * Created by 赵天歌 on 2016/10/30.
  * Time: 16:47
- * 需要get方法传入 a_id
+ * 需要get方法传入
+ * eg:localhost/running/JoinandCancel.php?act=join&a_id=赵天歌1477817867
+ *
+ * localhost/running/JoinandCancel.php?act=cancel&a_id=赵天歌1477817867
  */
 require_once 'header.php';
 @$act = $_GET['act'];
