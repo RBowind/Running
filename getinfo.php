@@ -5,7 +5,7 @@
  * Date: 2016/8/28
  * Time: 11:29
  * 功能:各种查询。act通过get方法传递,记住：要登录！！！
- * eg:http://120.27.107.121/getinfo.php?act=getUserActivity&page=   获得用户所有发布的活动以及详情
+ * eg:http://localhost/getinfo.php?act=getUserActivity&page=   获得用户所有发布的活动以及详情
  * 1、 ***?act=getActivity&a_id=****   获得活动详情
  * 2、****?act=getThought$t_id=****    获得感想详情
  * 3、 ****?act=getUserThought         获得用户所有发布感想以及详情
