@@ -86,13 +86,25 @@ class deleteActivity
     public function delectActivity()
     {
         $pdo2 = new PdoMySQL();
-        if($pdo2 -> delete('activity',"a_id='".$_GET['a_id']."'"))
+        $data = array(
+          'cancel' => 1
+        );
+        if($pdo2 ->update($data,'activity',"a_id='".$_GET['a_id']."'"))
         {
-            $pdo2 ->delete('user_activity',"a_id='".$_GET['a_id']."'");
+
+            /*$pdo2 ->delete('user_activity',"a_id='".$_GET['a_id']."'");
             echo true;
             if($pdo2 -> delete('remark',"a_id='".$_GET['a_id']."'")){
                 echo true;
             }
+            */
+
+           /*
+          Coding...
+          提示参加活动的用户 该活动已经取消
+           header();
+           */
+           echo true;
         }else{
             echo 0;
         }
@@ -109,15 +121,12 @@ class adduseractivity extends activity
                 'time'=>self::setTime($this->time)
             );
             $pdo1 -> add($userActivity,'user_activity');
-            $pdo1 -> add($userActivity,'joinActivity');
+            $pdo1 -> add($userActivity,'joinactivity');
 
             var_dump($userActivity);
         }
 
-
-
 }
-
 
     @$act = $_GET['act'];
 
