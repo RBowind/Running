@@ -10,6 +10,7 @@ require_once 'PdoMySQL.class.php';
 require_once 'config.php';
 
 session_start();
+date_default_timezone_set('Asia/Shanghai');
 header('content-type:text/json;charset=utf-8');
 header('Access-Control-Allow-Headers: "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"');
 
