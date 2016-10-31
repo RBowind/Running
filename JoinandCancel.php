@@ -2,7 +2,7 @@
 /**
  * Created by 赵天歌 on 2016/10/30.
  * Time: 16:47
- * 需要get方法传入
+ * 需要get方法传入act = join 或者 cancel 再加上 a_id
  * eg:localhost/running/JoinandCancel.php?act=join&a_id=赵天歌1477817867
  *
  * localhost/running/JoinandCancel.php?act=cancel&a_id=赵天歌1477817867
@@ -19,7 +19,7 @@ if($act === 'join')
         'time' => date("Y-m-d H:i:s")
 
     );
-    if ($pdo->add($data, 'joinActivity')) {
+    if ($pdo->add($data, 'joinactivity')) {
         echo true;
     } else {
         echo 'you have already joined';
@@ -28,7 +28,7 @@ if($act === 'join')
 elseif ($act === 'cancel')
 {
 
-       if( $pdo -> delete('joinActivity',"a_id='".$_GET['a_id']."' and account='".$_SESSION['account']."'") )
+       if( $pdo -> delete('joinactivity',"a_id='".$_GET['a_id']."' and account='".$_SESSION['account']."'") )
        {
            echo true;
        }else{
