@@ -3,7 +3,7 @@
  * Created by 赵天歌 on 2016/10/30.
  * Time: 20:38
  * 本页面包含两个功能：1列出用户参与的活动
- *localhost/running/joined.php?act=myJoin
+ *localhost/running/joined.php?act=myJoin&page=**
  * 以及 得到该用户是否参加了该活动:
  * localhost/running/joined.php?act=ifJoin&a_id=赵天歌1477817867
  */
@@ -17,7 +17,7 @@ class myJoined
     {
 
         $pdo = new PdoMySQL();
-        $sql = "SELECT * FROM joinActivity WHERE account='".$_SESSION['account']."'" ;
+        $sql = "SELECT * FROM joinactivity WHERE account='".$_SESSION['account']."'" ;
         $row = $pdo->getAll($sql);
 
         //判断当前页数
@@ -25,7 +25,7 @@ class myJoined
         //偏移量
         $this->offset = ($nowpage-1)*$this->pagesize;
 
-        if($userJoin = $pdo->find('joinActivity',"account = '" . $_SESSION['account'] . "'",'*',null,null,'time desc',"$this->offset,$this->pagesize"))
+        if($userJoin = $pdo->find('joinactivity',"account = '" . $_SESSION['account'] . "'",'*',null,null,'time desc',"$this->offset,$this->pagesize"))
         {
             $array = array(
                 'array' => array()
@@ -40,6 +40,8 @@ class myJoined
                 }
                 echo json_encode($array);
             }
+        }else{
+            echo 0;
         }
 
     }
@@ -47,7 +49,7 @@ class myJoined
     public function ifJoin()
     {
         $pdo = new PdoMySQL();
-        if($pdo->find('joinActivity',"a_id = '" . $_GET ['a_id'] . "' and account = '" . $_SESSION['account'] . "'"))
+        if($pdo->find('joinactivity',"a_id = '" . $_GET ['a_id'] . "' and account = '" . $_SESSION['account'] . "'"))
         {
             echo true;
         }else{
