@@ -13,10 +13,10 @@ require_once 'header.php';
 
 /*
  * 得到活动中的用户头像
- */
+
 $photo = $pdo -> find('activity',"a_id='".$_GET['a_id']."'",'photo');
 $photoUrl = $photo['photo'];
-
+*/
 
 
 if($act === 'join')
@@ -24,8 +24,7 @@ if($act === 'join')
     $data = array(
         'account' => $_SESSION['account'],
         'a_id' => $_GET['a_id'],
-        'time' => date("Y-m-d H:i:s"),
-        'photo'=> $photoUrl
+        'time' => date("Y-m-d H:i:s")
     );
     if ($pdo->add($data, 'joinactivity')) {
         echo true;
