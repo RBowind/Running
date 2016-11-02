@@ -11,12 +11,6 @@ require_once 'header.php';
 @$act = $_GET['act'];
  $pdo = new PdoMySQL();
 
-/*
- * 得到活动中的用户头像
-
-$photo = $pdo -> find('activity',"a_id='".$_GET['a_id']."'",'photo');
-$photoUrl = $photo['photo'];
-*/
 
 
 if($act === 'join')
