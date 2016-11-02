@@ -33,13 +33,16 @@ class myJoined
             'array' => array()
         );
 
-        for ($i=0;$i<count($result);$i++)
-        {
-            array_push($a['array'],$result[$i]);
+        if (count($result)==0){
+            echo 0;
+            echo 'you have not joined any activity';
+        }else{
+            for ($i=0;$i<count($result);$i++)
+            {
+                array_push($a['array'],$result[$i]);
+            }
+            echo json_encode($a);
         }
-
-        echo json_encode($a);
-
     }
 
    /*
