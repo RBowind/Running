@@ -11,7 +11,41 @@ require_once 'header.php';
 
 class myJoined
 {
-    public $pagesize = 5 ;   //定义每页数量
+
+    public $pagesize = 5 ;
+
+    public function myJoin()
+    {
+        $pdo = new PdoMySQL();
+
+        //判断当前页数
+        $nowpage = isset($_GET['page'])?intval($_GET['page']) : 1;
+        //偏移量
+        $this->offset = ($nowpage-1)*$this->pagesize;
+
+        $sql = "SELECT activity.photo,activity.postTime,joinactivity.time,p_number,distance FROM joinactivity INNER JOIN activity 
+                ON joinactivity.account='".$_SESSION['account']."' and activity.a_id=joinactivity.a_id 
+                ORDER BY time desc limit $this->offset,$this->pagesize ";
+
+        $result =  $pdo -> getAll($sql);
+
+        $a =array(
+            'array' => array()
+        );
+
+        for ($i=0;$i<count($result);$i++)
+        {
+            array_push($a['array'],$result[$i]);
+        }
+
+        echo json_encode($a);
+
+    }
+
+   /*
+   不会join时候的繁杂代码~~
+
+   public $pagesize = 5 ;   //定义每页数量
 
     public function myJoin()
     {
@@ -44,7 +78,7 @@ class myJoined
             echo 0;
         }
 
-    }
+    }*/
 
     public function ifJoin()
     {
