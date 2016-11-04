@@ -17,15 +17,22 @@ $pdo = new PdoMySQL();
 
 $cancel = $pdo->find('joinactivity',"account='".$_GET['account']."'",'becanceled');
 
-$array =array(
-    'array' => array()
-);
+if (count($cancel)==0){
+    echo 0;
+    echo 'you have not joined any activity';
+}else{
+    $array =array(
+        'array' => array()
+    );
 
-for($i=0;$i<count($cancel);$i++){
-    array_push($array['array'],$cancel[$i]);
+    for($i=0;$i<count($cancel);$i++){
+        array_push($array['array'],$cancel[$i]);
+    }
+
+    echo json_encode($array);
 }
 
-echo json_encode($array);
+
 
 
 

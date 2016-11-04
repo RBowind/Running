@@ -23,7 +23,7 @@ class myJoined
         //偏移量
         $this->offset = ($nowpage-1)*$this->pagesize;
 
-        $sql = "SELECT activity.a_id,activity.photo,activity.postTime,joinactivity.time,p_number,distance FROM joinactivity INNER JOIN activity 
+        $sql = "SELECT activity.a_id,activity.cancel,activity.photo,activity.postTime,joinactivity.time,p_number,distance FROM joinactivity INNER JOIN activity 
                 ON joinactivity.account='".$_SESSION['account']."' and activity.a_id=joinactivity.a_id 
                 ORDER BY time desc limit $this->offset,$this->pagesize ";
 
