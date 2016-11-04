@@ -4,7 +4,7 @@
  * Created by PhpStorm.
  * User: RBowi
  * Date: 2016/7/28
- * 功能：实现发起活动、 删除活动，回复活动，参加活动
+ * 功能：实现发起活动、 删除活动，
  * 注意：此功能必须得先登录成功来保持session。
  *通过get方法传递 act的值postActivity，内容用JSON格式，传递的活动信息用post方法：
  * 'postTime'=> $_POST['postTime'],
@@ -102,9 +102,9 @@ class deleteActivity
            /*
           Coding...
           提示参加活动的用户 该活动已经取消
-           header();
            */
-           echo true;
+            echo true;
+            header("Location: cancelEvent.php?a_id=".$_GET['a_id']."");
         }else{
             echo 0;
         }
