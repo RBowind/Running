@@ -22,6 +22,7 @@ $pdo = new PdoMySQL();
 
 $act = $_GET['act'];
 
+
 $account = addslashes($_POST['account']);
 
 $password = md5($_POST['password']);
